@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+.custom-container{
+    width: 100%;
+    background: linear-gradient(to right,rgba(24, 24, 24, 0.822), rgba(24, 24, 24, 0.822),rgba(24, 24, 24, 0.822)), url(/images/bg.jpg);
+    background-size: cover;
+}
+@font-face {
+    font-family: Mont;
+    src: url(/fonts/Cocogoose-Pro-Bold-trial.ttf);
+}
+/***********Tailwind Directives for Sidebar Component***************/
+@layer components {
+    .sideBut{
+        @apply w-full transition duration-300 rounded-lg mt-1.5 py-1.5 hover:bg-green-400 hover:text-gray-950 pl-2 cursor-pointer;
+    }
+    .sideBut i{
+        @apply text-gray-500 mr-2;
+    }
+}

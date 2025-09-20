@@ -1,0 +1,15 @@
+{
+  "name": "nexa",
+  "version": "1.0.0",
+  "description": "Nexa Cryptocurrency App, for my Portfolio.",
+  "license": "ISC",
+  "author": "Obadiah Azimeh Nasara",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "dependencies": {
+    "vite": "^7.1.6"
+  }
+}
