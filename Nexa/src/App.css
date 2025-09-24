@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 .custom-container{
     width: 100%;
-    background: linear-gradient(to right,rgba(24, 24, 24, 0.822), rgba(24, 24, 24, 0.822),rgba(24, 24, 24, 0.822)), url(/images/bg.jpg);
+    background: url('/images/bg.png' );
     background-size: cover;
 }
 @font-face {
@@ -16,4 +16,12 @@
     .sideBut i{
         @apply text-gray-500 mr-2;
     }
+}
+
+.scrollbar-hide{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera*/
 }
