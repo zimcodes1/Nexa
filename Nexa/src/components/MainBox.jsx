@@ -2,7 +2,7 @@
 import { fetchMarketData, API_ID } from "../api";
 import { useEffect, useState } from "react";
 
-function Coin({ coinData }) {
+function Coin({ coinData, chart }) {
   const displayName =
     coinData.name?.[0].toUpperCase() + coinData.name?.slice(1);
 
@@ -65,6 +65,9 @@ function Coin({ coinData }) {
           </p>
         </span>
       </div>
+      <div className="w-[30%] h-full flex items-center justify-end overflow-hidden">
+        <img src={chart} className="w-full" />
+      </div>
     </div>
   );
 }
@@ -101,7 +104,7 @@ function MainBox() {
         </div>
 
         <div className="w-[50%] h-full p-5 overflow-hidden" id="chart">
-          <img src="/images/chart.png" alt="Chart" className="w-full h-auto" />
+        <img src="/images/charts/chart1.png" alt="Chart" />
         </div>
       </div>
 
@@ -124,7 +127,7 @@ function MainBox() {
           )}
           {!loading &&
             !error &&
-            coins.map((coin) => <Coin key={coin.coinId} coinData={coin} />)}
+            coins.map((coin) => <Coin key={coin.coinId} coinData={coin} chart={'/images/charts/chart3.png'} />)}
         </div>
       </div>
     </div>

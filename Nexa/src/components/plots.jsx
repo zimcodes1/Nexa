@@ -1,39 +1,39 @@
-import React from 'react';
-import Plot from 'react-plotly.js';
+// TradingViewWidget.jsx
+import React, { useEffect, useRef, memo } from 'react';
 
-function createChart(container) {
-  return(
-    <Plot
-      data={[
+function TradingViewWidget() {
+  const container = useRef();
+
+  useEffect(
+    () => {
+      const script = document.createElement("script");
+      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js";
+      script.type = "text/javascript";
+      script.async = true;
+      script.innerHTML = `
         {
-        x: [1, 2, 3, 4, 5, 6, 7, 8],
-        y: [10, 15, 13, 17, 20, 25, 30, 35],
-        type: 'scatter',
-        mode: 'lines',
-        line: {color: 'green'},
-        }
-      ]}
-      layout={{
-        width: 320,
-        height: 240,
-        title: '',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        xaxis: {
-          showgrid: false,
-          zeroline: false,
-          showticklabels: false,
-        },
-        yaxis: {
-          showgrid: false,
-          zeroline: false,
-          showticklabels: false,
-        },
-        margin: {l: 0, r: 0, t: 0, b: 0},
-      }}
-  config={{displayModeBar: false, staticPlot: true}}
-    />
-  )
+          "symbol": "BITSTAMP:BTCUSD",
+          "chartOnly": true,
+          "dateRange": "12M",
+          "noTimeScale": true,
+          "colorTheme": "dark",
+          "isTransparent": true,
+          "locale": "en",
+          "width": "100%",
+          "autosize": true,
+          "height": "100%"
+        }`;
+      container.current.appendChild(script);
+    },
+    []
+  );
+
+  return (
+    <div className="tradingview-widget-container" ref={container}>
+      <div className="tradingview-widget-container__widget"></div>
+      <div className="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener nofollow" target="_blank"><span className="blue-text">Bitcoin price</span></a><span className="trademark"> by TradingView</span></div>
+    </div>
+  );
 }
 
-export default createChart
+export default memo(TradingViewWidget);
