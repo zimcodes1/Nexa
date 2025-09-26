@@ -33,8 +33,8 @@ function Coin({ coinData, chart }) {
       : "text-red-400";
 
   return (
-    <div className="flex w-[90%] h-20 ml-[5%] rounded-4xl bg-[#cccccc0c] mt-1 px-4 items-center">
-      <div className="w-[70%] h-full flex items-center justify-between">
+    <div className="flex w-[90%] h-20 ml-[5%] rounded-4xl bg-[#cccccc0c] mt-1 px-5 items-center">
+      <div className="w-[100%] h-full flex items-center justify-between">
         <span className="flex items-center">
           <span className="overflow-hidden w-[50px] h-[50px]">
             <img
@@ -65,9 +65,7 @@ function Coin({ coinData, chart }) {
           </p>
         </span>
       </div>
-      <div className="w-[30%] h-full flex items-center justify-end overflow-hidden">
-        <img src={chart} className="w-full" />
-      </div>
+     
     </div>
   );
 }
@@ -92,19 +90,66 @@ function MainBox() {
   return (
     <div className="flex flex-col w-[50%] h-[700px] overflow-hidden backdrop-blur-sm">
       <div className=" flex w-full h-[30%] bg-[#cccccc11] rounded-4xl mt-[2%] overflow-hidden">
-        <div className="w-[50%] h-full p-5">
+        <div className="w-[30%] h-full p-5">
           <h3 className="text-gray-50 text-md">Portfolio Summary</h3>
           <p className="text-green-200 text-sm mt-5">Available balance</p>
           <h1 className="text-5xl my-2 text-gray-50">
-            $0<dot className="text-gray-500">.000</dot>
+            $0<dot className="text-gray-500">.00</dot>
           </h1>
           <p className="mt-1 text-[red] text-sm">
             <i className="fa fa-angle-down"></i>2.5% (1d) -$130
           </p>
         </div>
 
-        <div className="w-[50%] h-full p-5 overflow-hidden" id="chart">
-        <img src="/images/charts/chart1.png" alt="Chart" />
+        <div className="w-[70%] h-full p-5 overflow-hidden" id="chart">
+          <div className="w-full h-[50%]">
+            <button className="bg-[#cccccc31] text-gray-50 px-3 py-2 rounded-xl cursor-pointer font-semibold float-end text-sm">Buy Crypto <i className="fa fa-credit-card"></i></button>
+          </div>
+          <div className="w-full h-[50%] flex justify-end items-end">
+            <span className="flex flex-col">
+              <span className='actionButton'>
+              <i className="fas fa-arrow-left rotate-135"></i>
+              </span>
+              <p className="text-gray-100 text-sm text-center mt-1">Send</p>
+            </span>
+          
+          <span className="flex flex-col">
+              <span className='actionButton'>
+              <i className="fas fa-arrow-left rotate-320"></i>
+              </span>  
+              <p className="text-gray-100 text-sm text-center mt-1">Receive</p>
+          </span>
+         
+          <span className="flex flex-col">
+              <span className='actionButton'>
+              <i className="fas fa-qrcode"></i>
+            </span>  
+              <p className="text-gray-100 text-sm text-center mt-1">Scan</p>
+          </span>
+            
+          <span  className="flex flex-col">
+              <span className='actionButton'>
+              <i className="fas fa-history"></i>
+            </span>
+              <p className="text-gray-100 text-sm text-center mt-1">History</p>
+          </span>
+           
+            <span  className="flex flex-col">
+              <span className='actionButton'>
+              <i className="fas fa-exchange-alt"></i>
+            </span>
+              <p className="text-gray-100 text-sm text-center mt-1">Swap</p>
+          </span>
+
+           <span  className="flex flex-col">
+              <span className='actionButton'>
+              <i className="fas fa-image"></i>
+            </span>
+              <p className="text-gray-100 text-sm text-center mt-1">NFT</p>
+          </span>
+           
+           
+          </div> 
         </div>
       </div>
 
@@ -127,7 +172,7 @@ function MainBox() {
           )}
           {!loading &&
             !error &&
-            coins.map((coin) => <Coin key={coin.coinId} coinData={coin} chart={'/images/charts/chart3.png'} />)}
+            coins.map((coin) => <Coin key={coin.coinId} coinData={coin}/>)}
         </div>
       </div>
     </div>
