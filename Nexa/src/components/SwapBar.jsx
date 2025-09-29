@@ -48,7 +48,7 @@ const SwapBar = ()=>{
 
                     <span className="flex justify-between items-center px-5 pt-3 mt-[15%] flex-wrap">
                         <span className="cursor-pointer flex justify-between items-center flex-wrap"><img src="/images/tron.png" alt="Coin" className="rounded-full w-[30px] h-[30px] mr-1"/> <p className="text-gray-50">Tron</p> <i className="fa fa-angle-down ml-1 text-gray-50"></i></span>
-                        <input type="text" className="bg-transparent w-[60%] text-right text-xl font-semibold text-gray-100 focus:outline-none" placeholder="0.00"/>
+                        <input type="text" className="bg-transparent w-[60%] text-right text-xl font-semibold text-gray-100 focus:outline-none caret-green-400" placeholder="0.00"/>
                     </span>
                     <p className="text-green-200 text-sm mt-4 mr-4 float-end"> ~ $0.00</p>
                 </div>
@@ -95,12 +95,12 @@ const SwapBar = ()=>{
 
                     <span className="flex justify-between items-center px-5 pt-3 mt-[15%] flex-wrap">
                         <span className="flex justify-between items-center cursor-pointer flex-wrap"><img src="/images/usdt.png" alt="Coin" className="rounded-full w-[30px] h-[30px] mr-1"/> <p className="text-gray-50">USDT</p> <i className="fa fa-angle-down ml-1 text-gray-50"></i></span>
-                        <input type="text" className="w-[60%] bg-transparent text-right text-xl font-semibold text-gray-100 focus:outline-none" placeholder="0.00"/>
+                        <input type="text" className="w-[60%] bg-transparent text-right text-xl font-semibold text-gray-100 focus:outline-none caret-green-400" placeholder="0.00"/>
                     </span>
                     <p className="text-green-200 text-sm mt-4 mr-4 float-end"> ~ $0.00</p>
                 </div>
             </div>
-            <button className="w-full h-[60px] bg-green-400 rounded-2xl text-left px-6 font-semibold text-gray-950 cursor-pointer">Confirm Swap <i className="fa fa-arrow-right float-end"></i></button>
+              <button className="w-full h-[60px] bg-green-400 hover:bg-red-500 transition-all duration-200 rounded-2xl text-left px-6 font-semibold text-gray-950 cursor-pointer mt-2">Confirm Transfer <i className="fa fa-arrow-right float-end"></i></button>
         </div>
     )
 }

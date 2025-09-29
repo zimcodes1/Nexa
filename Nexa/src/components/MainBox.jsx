@@ -1,8 +1,11 @@
 // MainBox.jsx
 import { fetchMarketData, API_ID } from "../api";
 import { useEffect, useState } from "react";
+import CoinDetails from "./CoinDetails";
 
 function Coin({ coinData, chart }) {
+  const [showDetails, setShowDetails] = useState(false);
+
   const displayName =
     coinData.name?.[0].toUpperCase() + coinData.name?.slice(1);
 
@@ -33,44 +36,51 @@ function Coin({ coinData, chart }) {
       : "text-red-400";
 
   return (
-    <div className="flex w-[90%] h-20 ml-[5%] rounded-4xl bg-[#cccccc0c] mt-1 px-5 items-center">
-      <div className="w-[100%] h-full flex items-center justify-between">
-        <span className="flex items-center">
-          <span className="overflow-hidden w-[50px] h-[50px]">
-            <img
-              src={coinData.image}
-              alt={displayName}
-              className="w-full h-auto"
-            />
+    <>
+      <div onClick={() => setShowDetails(true)} className="flex w-[90%] h-20 ml-[5%] rounded-4xl bg-[#cccccc0c] mt-1 px-5 items-center cursor-pointer">
+        <div className="w-[100%] h-full flex items-center justify-between">
+          <span className="flex items-center">
+            <span className="overflow-hidden w-[50px] h-[50px]">
+              <img
+                src={coinData.image}
+                alt={displayName}
+                className="w-full h-auto"
+              />
+            </span>
+            <span className="flex flex-col ml-2">
+              <h3 className="text-gray-100 font-semibold">{displayName}</h3>
+              <p className="text-gray-400">
+                {coinData.abb}: {price}
+              </p>
+            </span>
           </span>
-          <span className="flex flex-col ml-2">
-            <h3 className="text-gray-100 font-semibold">{displayName}</h3>
-            <p className="text-gray-400">
-              {coinData.abb}: {price}
+
+          <span className="text-right">
+            <h3 className="font-semibold text-gray-100">{changeUSD}</h3>
+            <p className={pctClass}>
+              <i
+                className={`fa ${
+                  coinData.priceChangePercent >= 0
+                    ? "fa-angle-up"
+                    : "fa-angle-down"
+                }`}
+              ></i>{" "}
+              {changePct}
             </p>
           </span>
-        </span>
-
-        <span className="text-right">
-          <h3 className="font-semibold text-gray-100">{changeUSD}</h3>
-          <p className={pctClass}>
-            <i
-              className={`fa ${
-                coinData.priceChangePercent >= 0
-                  ? "fa-angle-up"
-                  : "fa-angle-down"
-              }`}
-            ></i>{" "}
-            {changePct}
-          </p>
-        </span>
+        </div>
       </div>
-     
-    </div>
+      {showDetails && (
+        <CoinDetails
+          coin={coinData}
+          onClose={() => setShowDetails(false)}
+        />
+      )}
+    </>
   );
 }
 
-function MainBox() {
+function MainBox({ onAction }) {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -107,20 +117,34 @@ function MainBox() {
           </div>
           <div className="w-full h-[50%] flex justify-end items-end">
             <span className="flex flex-col">
-              <span className='actionButton'>
+              <span className='actionButton' onClick={() => onAction('send')}>
               <i className="fas fa-arrow-left rotate-135"></i>
               </span>
               <p className="text-gray-100 text-sm text-center mt-1">Send</p>
             </span>
           
-          <span className="flex flex-col">
-              <span className='actionButton'>
+          <span className="flex flex-col"> 
+              <span className='actionButton' onClick={() => onAction('recieve')}>
               <i className="fas fa-arrow-left rotate-320"></i>
               </span>  
               <p className="text-gray-100 text-sm text-center mt-1">Receive</p>
           </span>
          
           <span className="flex flex-col">
+              <span className='actionButton' onClick={() => onAction('nft')}>
+              <i className="fas fa-image"></i>
+            </span>  
+              <p className="text-gray-100 text-sm text-center mt-1">NFT</p>
+          </span>
+            
+          <span  className="flex flex-col">
+              <span className='actionButton' onClick={() => onAction('swap')}>
+              <i className="fas fa-exchange-alt"></i>
+            </span>
+              <p className="text-gray-100 text-sm text-center mt-1">Swap</p>
+          </span>
+
+           <span  className="flex flex-col">
               <span className='actionButton'>
               <i className="fas fa-qrcode"></i>
             </span>  
@@ -133,21 +157,7 @@ function MainBox() {
             </span>
               <p className="text-gray-100 text-sm text-center mt-1">History</p>
           </span>
-           
-            <span  className="flex flex-col">
-              <span className='actionButton'>
-              <i className="fas fa-exchange-alt"></i>
-            </span>
-              <p className="text-gray-100 text-sm text-center mt-1">Swap</p>
-          </span>
 
-           <span  className="flex flex-col">
-              <span className='actionButton'>
-              <i className="fas fa-image"></i>
-            </span>
-              <p className="text-gray-100 text-sm text-center mt-1">NFT</p>
-          </span>
-           
            
           </div> 
         </div>
