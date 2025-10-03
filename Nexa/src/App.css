@@ -4,6 +4,13 @@
     background: url('/images/bg.png' );
     background-size: cover;
 }
+@media screen and (max-width: 640px) {
+    .custom-container{
+        background: #111 ;
+        background-size: cover;
+    }
+    
+}
 @font-face {
     font-family: Mont;
     src: url(/fonts/Cocogoose-Pro-Bold-trial.ttf);
@@ -17,7 +24,7 @@
         @apply text-gray-500 mr-2;
     }
     .actionButton{
-        @apply hover:text-gray-900 hover:bg-green-400 transition-all duration-300 cursor-pointer text-gray-50 rounded-full bg-[#cccccc31] flex w-[50px] h-[50px] items-center justify-center mx-1;
+        @apply max-sm:w-[45px] max-sm:h-[45px] hover:text-gray-900 hover:bg-green-400 transition-all duration-300 cursor-pointer text-gray-50 rounded-full bg-[#cccccc31] flex w-[50px] h-[50px] items-center justify-center mx-1;
     }
 }
 

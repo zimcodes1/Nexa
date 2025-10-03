@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import useClickOutside from '../hooks/useClickOutside';
 
-const SwapBar = ()=>{
+const SwapBar = ({ onClose })=>{
     const [showDropdown2, setShowDropdown2] = useState(false);
     const [showDropdown3, setShowDropdown3] = useState(false);
+    const componentRef = useRef();
+    useClickOutside(componentRef, () => {
+        if (window.innerWidth <= 640) {
+            onClose();
+        }
+    });
     return(
-        <div className="flex w-[30%] h-[700px] bg-gradient-to-b from-transparent to-[#cccccc11] rounded-4xl mr-5 p-5 flex-wrap backdrop-blur-sm">
-
+        <div ref={componentRef} className="max-sm:w-full max-sm:h-[80%] max-sm:fixed max-sm:bottom-0 max-sm:rounded-b-none max-sm:bg-[#111] flex w-[30%] h-[700px] bg-gradient-to-b from-transparent to-[#cccccc11] rounded-4xl mr-5 p-5 flex-wrap backdrop-blur-sm">
+            
             <h3 className="text-gray-50 text-lg font-bold">Swap</h3>
-
             <div className="w-full h-[40%] rounded-3xl bg-[#cccccc0a]">
                 <span className="flex justify-between items-center px-5 mt-5">
                 <p className="text-gray-400 text-lg">From:</p>

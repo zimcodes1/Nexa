@@ -1,8 +1,16 @@
+import { useRef } from 'react';
+import useClickOutside from '../hooks/useClickOutside';
 
+function Send({ onClose }){
+    const componentRef = useRef();
+    useClickOutside(componentRef, () => {
+        if (window.innerWidth <= 640) { // sm breakpoint
+            onClose();
+        }
+    });
 
-function Send(coin){
     return(
-        <div className="flex w-[30%] h-[700px] bg-gradient-to-b from-transparent to-[#cccccc11] rounded-4xl mr-5 p-5 flex-wrap backdrop-blur-sm">
+        <div ref={componentRef} className="max-sm:w-full max-sm:h-[80%] max-sm:fixed max-sm:bottom-0 max-sm:rounded-b-none max-sm:bg-[#111] flex w-[30%] h-[700px] bg-gradient-to-b from-transparent to-[#cccccc11] rounded-4xl mr-5 p-5 flex-wrap backdrop-blur-sm">
             <div className="w-full">
                 <h1 className="text-gray-50 text-xl font-bold">Send Crypto</h1>
                 <p className="text-gray-50 text-sm mt-10">Select coin & network:</p>

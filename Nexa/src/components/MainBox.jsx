@@ -37,10 +37,10 @@ function Coin({ coinData, chart }) {
 
   return (
     <>
-      <div onClick={() => setShowDetails(true)} className="flex w-[90%] h-20 ml-[5%] rounded-4xl bg-[#cccccc0c] mt-1 px-5 items-center cursor-pointer">
+      <div onClick={() => setShowDetails(true)} className="flex w-[90%] h-20 ml-[5%] max-sm:h-15 max-sm:w-[95%] max-sm:mx-auto max-sm:rounded-3xl rounded-4xl bg-[#cccccc0c] max-sm:bg-[#cccccc12] mt-1 px-5 max-sm:pl-2 items-center cursor-pointer">
         <div className="w-[100%] h-full flex items-center justify-between">
           <span className="flex items-center">
-            <span className="overflow-hidden w-[50px] h-[50px]">
+            <span className="overflow-hidden w-[50px] h-[50px] max-sm:w-[40px] max-sm:h-[40px] rounded-full bg-[#cccccc1a] flex justify-center items-center">
               <img
                 src={coinData.image}
                 alt={displayName}
@@ -98,10 +98,10 @@ function MainBox({ onAction }) {
   }, []);
 
   return (
-    <div className="flex flex-col w-[50%] h-[700px] overflow-hidden backdrop-blur-sm">
-      <div className=" flex w-full h-[30%] bg-[#cccccc11] rounded-4xl mt-[2%] overflow-hidden">
-        <div className="w-[30%] h-full p-5">
-          <h3 className="text-gray-50 text-md">Portfolio Summary</h3>
+    <div className="flex flex-col w-[50%] h-[700px] max-sm:h-auto overflow-hidden backdrop-blur-sm max-sm:w-full max-sm:overflow-wrap">
+      <div className=" flex w-full max-sm:w-[95%] max-sm:mx-auto h-[30%] max-sm:h-[180px] max-sm:mt-10 max-sm:bg-[#cccccc12] bg-[#cccccc11] rounded-4xl mt-[2%] overflow-hidden">
+        <div className="w-[30%] h-full p-5 max-sm:hidden">
+          <h3 className="text-gray-50 text-md max-sm:text-sm">Portfolio Summary</h3>
           <p className="text-green-200 text-sm mt-5">Available balance</p>
           <h1 className="text-5xl my-2 text-gray-50">
             $0<dot className="text-gray-500">.00</dot>
@@ -111,11 +111,14 @@ function MainBox({ onAction }) {
           </p>
         </div>
 
-        <div className="w-[70%] h-full p-5 overflow-hidden" id="chart">
-          <div className="w-full h-[50%]">
+        <div className="w-[70%] max-sm:w-full h-full p-5 overflow-hidden" id="chart">
+          <div className="w-full h-[50%] max-sm:flex max-sm:justify-between max-sm:items-start">
+            <h1 className="text-3xl my-2 max-sm:mt-0 text-gray-50 hidden max-sm:block">
+            $0<dot className="text-gray-500">.00</dot>
+          </h1>
             <button className="bg-[#cccccc31] text-gray-50 px-3 py-2 rounded-xl cursor-pointer font-semibold float-end text-sm">Buy Crypto <i className="fa fa-credit-card"></i></button>
           </div>
-          <div className="w-full h-[50%] flex justify-end items-end">
+          <div className="w-full h-[50%] flex justify-end items-end max-sm:justify-evenly">
             <span className="flex flex-col">
               <span className='actionButton' onClick={() => onAction('send')}>
               <i className="fas fa-arrow-left rotate-135"></i>
@@ -163,7 +166,7 @@ function MainBox({ onAction }) {
         </div>
       </div>
 
-      <div className="w-full h-[75%] bg-[#cccccc11] rounded-4xl mt-[2%] overflow-scroll scrollbar-hide">
+      <div className="w-full h-[75%] bg-[#cccccc11] rounded-4xl mt-[2%] max-sm:mt-10 overflow-scroll scrollbar-hide max-sm:bg-transparent max-sm:overflow-wrap">
         <span className="flex items-center justify-between mr-[5%]">
           <h3 className="font-large font-bold ml-[5%] my-5 text-gray-50">
             Top Assets

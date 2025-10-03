@@ -12,23 +12,21 @@ console.log("Index Page Loaded");
 function Index() {
     const [activeComponent, setActiveComponent] = useState('send');
 
-    // Map action names to components
     const componentMap = {
-        send: <Send />,
-        recieve: <Recieve />,
-        swap: <SwapBar />,
-        nft: <NftBox />
-        // Add more if needed
+        send: <Send onClose={() => setActiveComponent(null)} />,
+        recieve: <Recieve onClose={() => setActiveComponent(null)} />,
+        swap: <SwapBar onClose={() => setActiveComponent(null)} />,
+        nft: <NftBox onClose={() => setActiveComponent(null)} />
     };
 
-    return(
+    return (
         <div className="flex w-full min-h-screen custom-container justify-between flex-wrap pb-5">
             <TopBar />
             <SideBar />
             <MainBox onAction={setActiveComponent} />
             {componentMap[activeComponent]}
         </div>
-    )
+    );
 }
 
 export default Index

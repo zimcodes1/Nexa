@@ -1,7 +1,7 @@
 
 const SideBar = ()=>{
     return(
-        <div className="w-[15%] h-full ml-[10px]">
+        <div className="w-[15%] h-full ml-[10px] max-sm:hidden">
             <ul className="text-gray-200 mt-2"><p className="font-bold ml-4">Menu</p>
                 <li className="sideBut"><i className="fa fa-home"></i> Home</li>
                 <li className="sideBut"><i className="fa fa-wallet"></i> Wallet</li>

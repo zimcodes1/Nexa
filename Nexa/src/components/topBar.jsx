@@ -5,14 +5,14 @@ function TopBar() {
 
     return (
         //Topbar Component
-        <div className='top-bar w-[100%] h-[70px] flex justify-between items-center pl-5 pr-10'>
+        <div className='top-bar w-[100%] h-[70px] flex justify-between items-center pl-5 pr-10 max-sm:pr-3 max-sm:pl-3 max-sm:sticky max-sm:top-0 z-10 max-sm:bg-[#111]'>
             <div className="logo flex justify-center items-center w-auto">
                 <img src="/images/logo.png" alt="Nexa" className='w-[40px] h-[40px]'/>
                 <h2 className='text-gray-50 font-[Mont] pl-1'>Nexa</h2>
             </div>
 
             <div className="chain flex justify-center items-center">
-                <h2 className='text-gray-50'>Wallet</h2>
+                <h2 className='text-gray-50 max-sm:hidden'>Wallet</h2>
                 <span 
                     className='bg-[#cccccc31] flex justify-center rounded-4xl text-sm shadow-md text-gray-50 cursor-pointer p-1 ml-[10px] relative'
                     onClick={() => setShowDropdown(!showDropdown)}
