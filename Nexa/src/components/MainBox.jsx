@@ -37,10 +37,10 @@ function Coin({ coinData, chart }) {
 
   return (
     <>
-      <div onClick={() => setShowDetails(true)} className="flex w-[90%] h-20 ml-[5%] max-sm:h-15 max-sm:w-[95%] max-sm:mx-auto max-sm:rounded-3xl rounded-4xl bg-[#cccccc0c] max-sm:bg-[#cccccc12] mt-1 px-5 max-sm:pl-2 items-center cursor-pointer">
+      <div onClick={() => setShowDetails(true)} className="flex w-[90%] h-20 ml-[5%] max-sm:h-15 max-sm:w-[95%] max-sm:mx-auto max-sm:rounded-3xl rounded-4xl bg-[#cccccc0c] max-sm:bg-transparent mt-1 px-5 max-sm:pl-2 items-center cursor-pointer">
         <div className="w-[100%] h-full flex items-center justify-between">
           <span className="flex items-center">
-            <span className="overflow-hidden w-[50px] h-[50px] max-sm:w-[40px] max-sm:h-[40px] rounded-full bg-[#cccccc1a] flex justify-center items-center">
+            <span className="overflow-hidden w-[50px] h-[50px] max-sm:w-[40px] max-sm:h-[40px] flex justify-center items-center">
               <img
                 src={coinData.image}
                 alt={displayName}
@@ -49,15 +49,15 @@ function Coin({ coinData, chart }) {
             </span>
             <span className="flex flex-col ml-2">
               <h3 className="text-gray-100 font-semibold">{displayName}</h3>
-              <p className="text-gray-400">
+              <p className="text-gray-400 max-sm:text-sm">
                 {coinData.abb}: {price}
               </p>
             </span>
           </span>
 
           <span className="text-right">
-            <h3 className="font-semibold text-gray-100">{changeUSD}</h3>
-            <p className={pctClass}>
+            <h3 className="font-semibold text-gray-100 max-sm:text-sm">{changeUSD}</h3>
+            <p className={`${pctClass}  max-sm:text-sm`}>
               <i
                 className={`fa ${
                   coinData.priceChangePercent >= 0
@@ -84,6 +84,7 @@ function MainBox({ onAction }) {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showBalance, setShowBalance] = useState(true); // Add this line
 
   useEffect(() => {
     const ids = API_ID.map((c) => c.name);
@@ -98,8 +99,8 @@ function MainBox({ onAction }) {
   }, []);
 
   return (
-    <div className="flex flex-col w-[50%] h-[700px] max-sm:h-auto overflow-hidden backdrop-blur-sm max-sm:w-full max-sm:overflow-wrap">
-      <div className=" flex w-full max-sm:w-[95%] max-sm:mx-auto h-[30%] max-sm:h-[180px] max-sm:mt-10 max-sm:bg-[#cccccc12] bg-[#cccccc11] rounded-4xl mt-[2%] overflow-hidden">
+    <div className="flex flex-col w-[50%] h-[700px] max-sm:h-fit overflow-hidden backdrop-blur-sm max-sm:w-full max-sm:overflow-wrap max-md:w-[60%]">
+      <div className="flex w-full max-sm:w-[95%] max-sm:mx-auto h-[30%] max-sm:h-[170px] max-sm:mt-5 max-sm:bg-transparent bg-[#cccccc11] rounded-4xl mt-[2%] overflow-hidden max-sm:rounded-none">
         <div className="w-[30%] h-full p-5 max-sm:hidden">
           <h3 className="text-gray-50 text-md max-sm:text-sm">Portfolio Summary</h3>
           <p className="text-green-200 text-sm mt-5">Available balance</p>
@@ -111,14 +112,25 @@ function MainBox({ onAction }) {
           </p>
         </div>
 
-        <div className="w-[70%] max-sm:w-full h-full p-5 overflow-hidden" id="chart">
+        <div className="w-[70%] max-sm:w-full h-full p-5 max-sm:p-0 overflow-hidden" id="chart">
           <div className="w-full h-[50%] max-sm:flex max-sm:justify-between max-sm:items-start">
-            <h1 className="text-3xl my-2 max-sm:mt-0 text-gray-50 hidden max-sm:block">
-            $0<dot className="text-gray-500">.00</dot>
-          </h1>
-            <button className="bg-[#cccccc31] text-gray-50 px-3 py-2 rounded-xl cursor-pointer font-semibold float-end text-sm">Buy Crypto <i className="fa fa-credit-card"></i></button>
+            <span className="max-sm:flex items-center hidden">
+              <h1 className="text-4xl max-sm:my-0 text-gray-50 hidden max-sm:block font-bold">
+                {showBalance ? (
+                  <>$0<dot>.00</dot></>
+                ) : (
+                  '****'
+                )}
+              </h1>
+              <i 
+                className={`fa ${showBalance ? 'fa-eye-slash' : 'fa-eye'} text-sm p-2 text-gray-50 cursor-pointer`}
+                onClick={() => setShowBalance(!showBalance)}
+              ></i>
+            </span>
+  
+            <button className="bg-[#cccccc31] text-gray-50 px-3 py-2 rounded-xl cursor-pointer float-end text-sm">Buy Crypto <i className="fa fa-credit-card"></i></button>
           </div>
-          <div className="w-full h-[50%] flex justify-end items-end max-sm:justify-evenly">
+          <div className="w-full h-[50%] flex justify-end items-end max-sm:justify-between max-sm:border-b-2 max-sm:border-[#cccccc31] max-sm:pb-3">
             <span className="flex flex-col">
               <span className='actionButton' onClick={() => onAction('send')}>
               <i className="fas fa-arrow-left rotate-135"></i>
@@ -147,7 +159,7 @@ function MainBox({ onAction }) {
               <p className="text-gray-100 text-sm text-center mt-1">Swap</p>
           </span>
 
-           <span  className="flex flex-col">
+           <span  className="flex flex-col max-sm:hidden">
               <span className='actionButton'>
               <i className="fas fa-qrcode"></i>
             </span>  
@@ -158,7 +170,7 @@ function MainBox({ onAction }) {
               <span className='actionButton'>
               <i className="fas fa-history"></i>
             </span>
-              <p className="text-gray-100 text-sm text-center mt-1">History</p>
+              <p className="text-gray-100 text-sm text-center mt-">History</p>
           </span>
 
            
@@ -166,7 +178,7 @@ function MainBox({ onAction }) {
         </div>
       </div>
 
-      <div className="w-full h-[75%] bg-[#cccccc11] rounded-4xl mt-[2%] max-sm:mt-10 overflow-scroll scrollbar-hide max-sm:bg-transparent max-sm:overflow-wrap">
+      <div className="w-full h-[75%] bg-[#cccccc11] rounded-4xl mt-[2%] max-sm:mt-5 overflow-scroll scrollbar-hide max-sm:bg-transparent max-sm:overflow-wrap">
         <span className="flex items-center justify-between mr-[5%]">
           <h3 className="font-large font-bold ml-[5%] my-5 text-gray-50">
             Top Assets

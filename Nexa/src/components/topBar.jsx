@@ -5,7 +5,7 @@ function TopBar() {
 
     return (
         //Topbar Component
-        <div className='top-bar w-[100%] h-[70px] flex justify-between items-center pl-5 pr-10 max-sm:pr-3 max-sm:pl-3 max-sm:sticky max-sm:top-0 z-10 max-sm:bg-[#111]'>
+        <div className='top-bar w-[100%] h-[70px] max-sm:h-[80px] flex justify-between items-center pl-5 pr-10 max-sm:pr-3 max-sm:pl-3 max-sm:sticky max-sm:top-0 z-10 max-sm:bg-[#111]'>
             <div className="logo flex justify-center items-center w-auto">
                 <img src="/images/logo.png" alt="Nexa" className='w-[40px] h-[40px]'/>
                 <h2 className='text-gray-50 font-[Mont] pl-1'>Nexa</h2>
