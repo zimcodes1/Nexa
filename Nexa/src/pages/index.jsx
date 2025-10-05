@@ -10,7 +10,7 @@ import { useState } from 'react'
 
 console.log("Index Page Loaded");
 function Index() {
-    const [activeComponent, setActiveComponent] = useState('send');
+    const [activeComponent, setActiveComponent] = useState('');
 
     const componentMap = {
         send: <Send onClose={() => setActiveComponent(null)} />,
@@ -20,7 +20,7 @@ function Index() {
     };
 
     return (
-        <div className="flex w-full min-h-screen custom-container justify-between flex-wrap pb-5">
+        <div className="flex w-full min-h-screen custom-container justify-between flex-wrap pb-5  max-sm:pb-0">
             <TopBar />
             <SideBar />
             <MainBox onAction={setActiveComponent} />

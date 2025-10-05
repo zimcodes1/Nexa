@@ -11,13 +11,13 @@ const SwapBar = ({ onClose })=>{
         }
     });
     return(
-        <div ref={componentRef} className="max-sm:w-full max-sm:h-[80%] max-sm:fixed max-sm:bottom-0 max-sm:rounded-b-none max-sm:bg-[#111] flex w-[30%] h-[700px] bg-gradient-to-b from-transparent to-[#cccccc11] rounded-4xl mr-5 p-5 flex-wrap backdrop-blur-sm">
+        <div ref={componentRef} className="max-md:bg-[#111] max-md:fixed max-md:w-[90%] max-md:ml-[10%] max-md:rounded-none max-md:px-10 max-md:pt-10 max-md:h-full z-10 max-sm:w-full max-sm:h-[80%] max-sm:fixed max-sm:bottom-0 max-sm:rounded-b-none  max-sm:bg-[#141414] max-sm:shadow-md max-sm:sadow-no shadow-white flex w-[30%] h-[700px] bg-gradient-to-b from-transparent to-[#cccccc11] rounded-4xl mr-5 p-5 flex-wrap backdrop-blur-sm">
             
             <h3 className="text-gray-50 text-lg font-bold">Swap</h3>
-            <div className="w-full h-[40%] rounded-3xl bg-[#cccccc0a]">
+            <div className="w-full h-[40%] rounded-3xl bg-[#cccccc0a] max-sm:bg-transparent">
                 <span className="flex justify-between items-center px-5 mt-5">
                 <p className="text-gray-400 text-lg">From:</p>
-                <span onClick={() => setShowDropdown2(!showDropdown2)} className='bg-[#cccccc11] relative flex justify-center rounded-4xl text-sm shadow-md text-gray-50 cursor-pointer p-1 w-35'>
+                <span onClick={() => setShowDropdown2(!showDropdown2)} className='bg-[#cccccc11] relative flex justify-center rounded-4xl text-sm shadow-md max-sm:shodow-none text-gray-50 cursor-pointer p-1 w-35'>
                     <img src="/images/tron.png" alt="Chain" className='rounded-full w-[20px] h-[20px] mr-1'/>
                     0x2479...bfd9 
                     <i className="fa fa-angle-down mt-1"></i>
@@ -61,10 +61,10 @@ const SwapBar = ({ onClose })=>{
             </div>
 
 
-            <div className="w-full h-[40%] rounded-3xl bg-[#cccccc0a]">
+            <div className="w-full h-[40%] rounded-3xl bg-[#cccccc0a] max-sm:bg-transparent">
                 <span className="flex justify-between items-center px-5 mt-5">
                 <p className="text-gray-400 text-lg">To:</p>
-                  <span onClick={() => setShowDropdown3(!showDropdown3)} className='bg-[#cccccc11] relative flex justify-center rounded-4xl text-sm shadow-md text-gray-50 cursor-pointer p-1 w-35'>
+                  <span onClick={() => setShowDropdown3(!showDropdown3)} className='bg-[#cccccc11] relative flex justify-center rounded-4xl text-sm shadow-md max-sm:shadow-none text-gray-50 cursor-pointer p-1 w-35'>
                     <img src="/images/sui.png" alt="Chain" className='rounded-full w-[20px] h-[20px] mr-1'/>
                     0x1635...7d7a 
                     <i className="fa fa-angle-down mt-1"></i>

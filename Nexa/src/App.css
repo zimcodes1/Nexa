@@ -9,7 +9,6 @@
         background: #111 ;
         background-size: cover;
     }
-    
 }
 @font-face {
     font-family: Mont;
@@ -24,7 +23,7 @@
         @apply text-gray-500 mr-2;
     }
     .actionButton{
-        @apply hover:text-gray-900 hover:bg-green-400 transition-all duration-300 cursor-pointer text-gray-50 rounded-full bg-[#cccccc31] flex w-[50px] h-[50px] items-center justify-center mx-1;
+        @apply hover:text-gray-900 hover:bg-green-400 max-sm:bg-[#cccccc11] max-sm:shadow-none transition-all duration-300 cursor-pointer text-gray-50 rounded-full bg-[#cccccc31] flex w-[50px] h-[50px] items-center justify-center mx-1;
     }
 }
 

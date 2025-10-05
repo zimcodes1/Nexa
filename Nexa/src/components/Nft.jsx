@@ -10,8 +10,8 @@ function NftBox({ onClose }) {
   });
 
   return (
-    <div ref={componentRef} className="max-sm:w-full max-sm:h-[80%] max-sm:fixed max-sm:bottom-0 max-sm:rounded-b-none max-sm:bg-[#111] flex w-[30%] h-[700px] bg-gradient-to-b from-transparent to-[#cccccc11] rounded-4xl mr-5 pb-5 px-[2.5%] flex-wrap backdrop-blur-sm overflow-scroll scrollbar-hide">
-      <div className="w-full h-[40px] p-1 sticky top-0 bg-transparent z-10 backdrop-blur-3xl"><h3 className="text-gray-50 text-lg font-bold">NFT</h3></div>
+    <div ref={componentRef} className="max-md:bg-[#111] max-md:fixed max-md:w-[90%] max-md:ml-[10%] max-md:rounded-none max-md:px-10 max-md:pt-10 max-md:h-full z-10 max-sm:w-full max-sm:h-[80%] max-sm:fixed max-sm:bottom-0 max-sm:rounded-b-none  max-sm:bg-[#141414] max-sm:shadow-md shadow-white flex w-[30%] h-[700px] bg-gradient-to-b from-transparent to-[#cccccc11] rounded-4xl mr-5 pb-5 px-[2.5%] flex-wrap backdrop-blur-sm overflow-scroll scrollbar-hide">
+      <div className="w-full h-[40px] p-1 max-sm:pt-2 sticky top-0 bg-transparent max-sm:bg-inherit z-10 backdrop-blur-3xl"><h3 className="text-gray-50 text-lg font-bold max-sm:text-center">NFT</h3></div>
       <div className="w-full h-[320px] mt-3 rounded-2xl flex justify-center flex-wrap bg-[#00000031] overflow-hidden">
           <div className="w-full h-[85%] overflow-hidden p-0">
               <img src="/images/nft1.jpg" alt="NFT" className="w-full brightness-50 hover:brightness-100  transition-all duration-200"/>

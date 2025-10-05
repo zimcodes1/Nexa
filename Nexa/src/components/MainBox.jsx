@@ -37,7 +37,7 @@ function Coin({ coinData, chart }) {
 
   return (
     <>
-      <div onClick={() => setShowDetails(true)} className="flex w-[90%] h-20 ml-[5%] max-sm:h-15 max-sm:w-[95%] max-sm:mx-auto max-sm:rounded-3xl rounded-4xl bg-[#cccccc0c] max-sm:bg-transparent mt-1 px-5 max-sm:pl-2 items-center cursor-pointer">
+      <div onClick={() => setShowDetails(true)} className="flex w-[90%] h-20 ml-[5%] max-sm:h-15 max-sm:w-[95%] max-sm:mx-auto max-sm:rounded-3xl rounded-4xl bg-[#cccccc0c] max-sm:bg-transparent mt-1 px-5 max-sm:px-2 items-center cursor-pointer">
         <div className="w-[100%] h-full flex items-center justify-between">
           <span className="flex items-center">
             <span className="overflow-hidden w-[50px] h-[50px] max-sm:w-[40px] max-sm:h-[40px] flex justify-center items-center">
@@ -56,7 +56,7 @@ function Coin({ coinData, chart }) {
           </span>
 
           <span className="text-right">
-            <h3 className="font-semibold text-gray-100 max-sm:text-sm">{changeUSD}</h3>
+            <h3 className="font-semibold text-gray-100 max-sm:hidden">{changeUSD}</h3>
             <p className={`${pctClass}  max-sm:text-sm`}>
               <i
                 className={`fa ${
@@ -99,11 +99,11 @@ function MainBox({ onAction }) {
   }, []);
 
   return (
-    <div className="flex flex-col w-[50%] h-[700px] max-sm:h-fit overflow-hidden backdrop-blur-sm max-sm:w-full max-sm:overflow-wrap max-md:w-[60%]">
-      <div className="flex w-full max-sm:w-[95%] max-sm:mx-auto h-[30%] max-sm:h-[170px] max-sm:mt-5 max-sm:bg-transparent bg-[#cccccc11] rounded-4xl mt-[2%] overflow-hidden max-sm:rounded-none">
-        <div className="w-[30%] h-full p-5 max-sm:hidden">
-          <h3 className="text-gray-50 text-md max-sm:text-sm">Portfolio Summary</h3>
-          <p className="text-green-200 text-sm mt-5">Available balance</p>
+    <div className="flex flex-col max-md:w-[85%] w-[50%] h-[700px] max-md:h-[100dvh] pb-10 max-md:pb-0 max-md:ml-[12.5%] max-sm:ml-0 overflow-hidden backdrop-blur-sm max-sm:w-full max-sm:overflow-wrap">
+      <div className="flex w-full max-sm:w-[95%] max-sm:mx-auto h-[30%] max-md:h-[25%] max-md:py-5 max-sm:h-[250px] max-sm:sticky max-sm:top-0 max-sm:bg-[rgba(204,204,204,0.03)] max-sm:border max-sm:border-[#cccccc11] max-sm:p-4 max-sm:pt-6 bg-[#cccccc11] rounded-4xl mt-[2%] overflow-hidden max-sm:rounded-3xl">
+        <div className="w-[30%] h-full p-5 max-md:px-5 max-md:my-0 max-sm:hidden max-md:p-6">
+          <h3 className="text-gray-50 text-md max-sm:text-sm max-md:text-sm max-md:font-bold">Portfolio Summary</h3>
+          <p className="text-green-200 text-sm mt-5 max-md:mt-[45%]">Available balance</p>
           <h1 className="text-5xl my-2 text-gray-50">
             $0<dot className="text-gray-500">.00</dot>
           </h1>
@@ -117,9 +117,9 @@ function MainBox({ onAction }) {
             <span className="max-sm:flex items-center hidden">
               <h1 className="text-4xl max-sm:my-0 text-gray-50 hidden max-sm:block font-bold">
                 {showBalance ? (
-                  <>$0<dot>.00</dot></>
+                  <>$463<dot>.0</dot></>
                 ) : (
-                  '****'
+                  '$****'
                 )}
               </h1>
               <i 
@@ -128,35 +128,35 @@ function MainBox({ onAction }) {
               ></i>
             </span>
   
-            <button className="bg-[#cccccc31] text-gray-50 px-3 py-2 rounded-xl cursor-pointer float-end text-sm">Buy Crypto <i className="fa fa-credit-card"></i></button>
+            <button className="bg-[#cccccc31] max-sm:text-gray-300 max-sm:bg-[#cccccc11] text-gray-50 px-3 py-2 rounded-xl cursor-pointer float-end text-sm">Buy Crypto <i className="fa fa-credit-card"></i></button>
           </div>
-          <div className="w-full h-[50%] flex justify-end items-end max-sm:justify-between max-sm:border-b-2 max-sm:border-[#cccccc31] max-sm:pb-3">
+          <div className="w-full h-[50%] flex justify-end items-end max-sm:justify-between">
             <span className="flex flex-col">
-              <span className='actionButton' onClick={() => onAction('send')}>
+              <span className='actionButton max-sm:text-gray-300' onClick={() => onAction('send')}>
               <i className="fas fa-arrow-left rotate-135"></i>
               </span>
-              <p className="text-gray-100 text-sm text-center mt-1">Send</p>
+              <p className="text-gray-100 max-sm:text-gray-300 text-sm  text-center mt-1">Send</p>
             </span>
           
           <span className="flex flex-col"> 
-              <span className='actionButton' onClick={() => onAction('recieve')}>
+              <span className='actionButton max-sm:text-gray-300' onClick={() => onAction('recieve')}>
               <i className="fas fa-arrow-left rotate-320"></i>
               </span>  
-              <p className="text-gray-100 text-sm text-center mt-1">Receive</p>
+              <p className="text-gray-100 max-sm:text-gray-300 text-sm text-center mt-1">Receive</p>
           </span>
          
           <span className="flex flex-col">
-              <span className='actionButton' onClick={() => onAction('nft')}>
+              <span className='actionButton max-sm:text-gray-300' onClick={() => onAction('nft')}>
               <i className="fas fa-image"></i>
             </span>  
-              <p className="text-gray-100 text-sm text-center mt-1">NFT</p>
+              <p className="text-gray-100 max-sm:text-gray-300 text-sm text-center mt-1">NFT</p>
           </span>
             
           <span  className="flex flex-col">
-              <span className='actionButton' onClick={() => onAction('swap')}>
+              <span className='actionButton max-sm:text-gray-300' onClick={() => onAction('swap')}>
               <i className="fas fa-exchange-alt"></i>
             </span>
-              <p className="text-gray-100 text-sm text-center mt-1">Swap</p>
+              <p className="text-gray-100 max-sm:text-gray-300 text-sm text-center mt-1">Swap</p>
           </span>
 
            <span  className="flex flex-col max-sm:hidden">
@@ -167,10 +167,10 @@ function MainBox({ onAction }) {
           </span>
             
           <span  className="flex flex-col">
-              <span className='actionButton'>
+              <span className='actionButton max-sm:text-gray-300'>
               <i className="fas fa-history"></i>
             </span>
-              <p className="text-gray-100 text-sm text-center mt-">History</p>
+              <p className="text-gray-100 max-sm:text-gray-300 text-sm text-center mt-">History</p>
           </span>
 
            
@@ -178,14 +178,18 @@ function MainBox({ onAction }) {
         </div>
       </div>
 
-      <div className="w-full h-[75%] bg-[#cccccc11] rounded-4xl mt-[2%] max-sm:mt-5 overflow-scroll scrollbar-hide max-sm:bg-transparent max-sm:overflow-wrap">
+      <div className="w-full h-[75%] max-md:h-[75%] bg-[#cccccc11] rounded-4xl mt-[2%] max-sm:mt-5 overflow-scroll scrollbar-hide max-sm:bg-transparent max-sm:overflow-wrap max-sm:h-full">
         <span className="flex items-center justify-between mr-[5%]">
           <h3 className="font-large font-bold ml-[5%] my-5 text-gray-50">
             Top Assets
           </h3>
-          <p className="text-center bg-[#cccccc17] rounded-4xl text-xs text-gray-300 cursor-pointer px-4 py-1.5">
+          <p className="text-center bg-[#cccccc17] max-sm:hidden rounded-4xl text-xs text-gray-300 cursor-pointer px-4 py-1.5">
             View all
           </p>
+          <span className="hidden max-sm:flex justify-between items-center">
+                <i className="fa fa-plus-circle text-gray-50 text-lg p-1 mx-2 cursor-pointer"></i>
+                <i className="fa fa-search text-gray-50 text-lg p-1 cursor-pointer"></i>
+          </span>
         </span>
 
         <div className="flex flex-col gap-2 pb-6 pt-2">
@@ -200,7 +204,35 @@ function MainBox({ onAction }) {
             coins.map((coin) => <Coin key={coin.coinId} coinData={coin}/>)}
         </div>
       </div>
+
+
+
+    <div className="hidden max-sm:flex fixed h-[60px] w-full bottom-0 bg-[#111] justify-between max-sm:px-5 items-center border-t border-[#cccccc11]">
+        <span className="flex flex-col text-gray-400 items-center hover:text-gray-300">
+          <i className="fa fa-home"></i>
+          <p className="text-sm">Home</p>
+        </span>
+        <span className="flex flex-col text-gray-400 items-center hover:text-gray-300">
+          <i className="fa fa-dollar"></i>
+          <p className="text-sm">Markets</p>
+        </span>
+         <span className="flex flex-col text-gray-400 items-center hover:text-gray-300">
+          <i className="fa fa-line-chart"></i>
+          <p className="text-sm">Trade</p>
+        </span>
+        <span className="flex flex-col text-gray-400 items-center hover:text-gray-300">
+          <i className="fa fa-compass"></i>
+          <p className="text-sm">Discover</p>
+        </span>
+        <span className="flex flex-col text-gray-400 items-center hover:text-gray-300">
+          <i className="fa fa-wallet"></i>
+          <p className="text-sm">Wallet</p>
+        </span>
+       
     </div>
+      
+    </div>
+
   );
 }
 

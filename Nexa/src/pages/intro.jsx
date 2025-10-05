@@ -32,7 +32,7 @@ function Intro() {
                     <p className='text-gray-300 mt-3 max-sm:text-lg'>Take complete control of your digital assets and explore the world of Web3 with <b>Nexa</b>.</p>
 
                     <span className='mt-6'>
-                        <button className='px-4 py-3 rounded-2xl border-2 border-green-500 text-green-500 cursor-pointer transition-all duration-300 hover:bg-green-500 hover:text-white'>Get Started <i className="fa fa-arrow-right"></i></button>
+                        <Link to='/home'><button className='px-4 py-3 rounded-2xl border-2 border-green-500 text-green-500 cursor-pointer transition-all duration-300 hover:bg-green-500 hover:text-white'>Get Started <i className="fa fa-arrow-right"></i></button></Link>
                         <button className='px-4 py-3 ml-4 rounded-2xl border-2 border-green-500 text-green-500 cursor-pointer transition-all duration-300 hover:bg-green-500 hover:text-white'>Download <i className="fa fa-arrow-down"></i></button>
                     </span>
                 </div>
@@ -221,7 +221,7 @@ function Intro() {
                             <button className='border text-sm mt-2 border-green-500 text-gray-100 py-1 px-4 rounded-3xl transition-all duration-300 hover:bg-green-500 hover:text-gray-950'>Download for Mac <i className="fab fa-apple"></i></button>
                         </span>
                         </div>
-                        <div className='w-[50%] max-md:w-[30%] max-md:mt-2 max-sm:w-full h-full flex flex-col justify-start'>
+                        <div className='w-[50%] max-md:w-full max-md:mt-2 max-sm:w-full h-full flex flex-col justify-start'>
                             <span> <h5 className='text-gray-100 font-bold text-center max-sm:mt-3'>Join Our Community</h5></span>
                             <span className='flex w-full justify-start max-sm:justify-evenly max-md:justify-evenly  max-sm:mt-2 mt-4 max-md:mt-1 items-center flex-wrap'>
                                 <a href="#" className='text-gray-100 text-2xl ml-2 p-2 rounded-2xl bg-[#cccccc11]'><i className="fab fa-discord"></i></a>
@@ -239,9 +239,9 @@ function Intro() {
                     
                 </div>
              </div>
-             <span className='px-30 max-sm:px-auto max-sm:text-center flex justify-between text-sm:justify-center items-center w-full mt-5 max-sm:mt-2'>
+             <span className='px-30 max-sm:px-auto  flex justify-between max-sm:justify-center max-md:justify-center items-center w-full mt-5 max-sm:mt-2'>
                <p className='text-gray-200 max-sm:text-sm'>© 2025 Nexa. All rights reserved.</p>
-                        <div className='flex space-x-4 max-sm:hidden'>
+                        <div className='flex space-x-4 max-sm:hidden max-md:hidden'>
                             <a href="#" className='text-gray-200'>Privacy Policy</a>
                             <a href="#" className='text-gray-200'>Terms of Service</a>
                         </div>
