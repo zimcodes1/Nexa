@@ -104,7 +104,7 @@ function MainBox({ onAction }) {
         <div className="w-[30%] h-full p-5 max-md:px-5 max-md:my-0 max-sm:hidden max-md:p-6">
           <h3 className="text-gray-50 text-md max-sm:text-sm max-md:text-sm max-md:font-bold">Portfolio Summary</h3>
           <p className="text-green-200 text-sm mt-5 max-md:mt-[45%]">Available balance</p>
-          <h1 className="text-5xl my-2 text-gray-50">
+          <h1 className="text-5xl my-2 text-gray-50 max-md:text-3xl">
             $0<dot className="text-gray-500">.00</dot>
           </h1>
           <p className="mt-1 text-[red] text-sm">

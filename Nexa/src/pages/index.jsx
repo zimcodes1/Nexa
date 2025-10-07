@@ -20,7 +20,7 @@ function Index() {
     };
 
     return (
-        <div className="flex w-full min-h-screen custom-container justify-between flex-wrap pb-5  max-sm:pb-0">
+        <div className="flex w-full min-h-screen custom-container justify-start flex-wrap pb-5  max-sm:pb-0">
             <TopBar />
             <SideBar />
             <MainBox onAction={setActiveComponent} />

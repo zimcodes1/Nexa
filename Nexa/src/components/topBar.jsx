@@ -5,7 +5,7 @@ function TopBar() {
 
     return (
         //Topbar Component
-        <div className='top-bar w-[100%] h-[70px] max-sm:h-[60px] max-md:pl-[12.5%] max-sm:items-start max-sm:p-2 flex justify-between items-center pl-5 pr-10 max-sm:pr-3 max-sm:pl-3 max-md:pr-5 max-sm:sticky max-sm:top-0 z-10 max-sm:bg-[#111]'>
+        <div className='top-bar w-[100%] h-[70px] max-sm:h-[60px] max-md:pl-[12.5%] max-sm:items-center max-sm:p-2 flex justify-between items-center pl-5 pr-10 max-sm:pr-3 max-sm:pl-3 max-md:pr-5 max-sm:sticky max-sm:top-0 z-10 max-sm:bg-[#111]'>
             <div className="logo flex justify-center items-center w-auto max-md:hidden max-sm:block">
                 <img src="/images/logo.png" alt="Nexa" className='w-[40px] h-[40px] max-sm:hidden'/>
                 <h2 className='text-gray-50 font-[Mont] pl-1 max-sm:hidden'>Nexa</h2>
@@ -15,10 +15,10 @@ function TopBar() {
             <div className="chain flex justify-center items-center">
                 <h2 className='text-gray-50 max-sm:hidden'>Wallet</h2>
                 <span 
-                    className='bg-[#cccccc31] flex justify-center rounded-4xl text-sm shadow-md text-gray-50 cursor-pointer p-1 max-sm:ml-0 ml-[10px] relative'
+                    className='bg-[#cccccc31] max-sm:bg-[#cccccc11] flex justify-center rounded-4xl text-sm shadow-md text-gray-50 cursor-pointer p-1 max-sm:ml-0 ml-[10px] relative'
                     onClick={() => setShowDropdown(!showDropdown)}
                 >
-                    <img src="/images/bnb.png" alt="Chain" className='rounded-full w-[20px] h-[20px] mr-1'/>
+                    <img src="/images/bnb.png" alt="Chain" className='rounded-full w-[20px] h-[20px] max-sm:w-[25px] max-sm:h-[25px] mr-1'/>
                     <p className='max-sm:hidden'>0x2479...bfd9</p><i className="fa fa-angle-down mt-1"></i>
                     {showDropdown && (
                         <div className="absolute top-full right-0 rounded-2xl overflow-hidden mt-1 shadow-md bg-[#222] z-10 min-w-[220px]">
