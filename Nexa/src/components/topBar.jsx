@@ -5,8 +5,8 @@ function TopBar() {
 
     return (
         //Topbar Component
-        <div className='top-bar w-[100%] h-[70px] max-sm:h-[60px] max-md:pl-[12.5%] max-sm:items-center max-sm:p-2 flex justify-between items-center pl-5 pr-10 max-sm:pr-3 max-sm:pl-3 max-md:pr-5 max-sm:sticky max-sm:top-0 z-10 max-sm:bg-[#111]'>
-            <div className="logo flex justify-center items-center w-auto max-md:hidden max-sm:block">
+        <div className='top-bar w-[100%] h-[70px] max-sm:h-[60px] max-[820px]:pl-[12.5%] max-sm:items-center max-sm:p-2 flex justify-between items-center pl-5 pr-10 max-sm:pr-3 max-sm:pl-3 max-md:pr-5 max-sm:sticky max-sm:top-0 z-10 max-sm:bg-[#111]'>
+            <div className="logo flex justify-center items-center w-auto max-[820px]:hidden max-sm:block">
                 <img src="/images/logo.png" alt="Nexa" className='w-[40px] h-[40px] max-sm:hidden'/>
                 <h2 className='text-gray-50 font-[Mont] pl-1 max-sm:hidden'>Nexa</h2>
                 <h3 className='text-gray-50 font-bold hidden max-sm:block'>My wallet</h3>

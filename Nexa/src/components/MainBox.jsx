@@ -99,21 +99,24 @@ function MainBox({ onAction }) {
   }, []);
 
   return (
-    <div className="flex flex-col max-md:w-[85%] w-[50%] h-[700px] max-md:h-[100dvh] pb-10 max-md:pb-0 max-md:ml-[12.5%] max-sm:ml-0 overflow-hidden backdrop-blur-sm max-sm:w-full max-sm:overflow-wrap">
-      <div className="flex w-full max-sm:w-[95%] max-sm:mx-auto h-[30%] max-md:h-[25%] max-md:py-5 max-sm:h-[250px] max-sm:sticky max-sm:top-0 max-sm:bg-[rgba(204,204,204,0.03)] max-sm:border max-sm:border-[#cccccc11] max-sm:p-4 max-sm:pt-6 bg-[#cccccc11] rounded-4xl mt-[2%] overflow-hidden max-sm:rounded-3xl">
-        <div className="w-[30%] h-full p-5 max-md:px-5 max-md:my-0 max-sm:hidden max-md:p-6">
-          <h3 className="text-gray-50 text-md max-sm:text-sm max-md:text-sm max-md:font-bold">Portfolio Summary</h3>
-          <p className="text-green-200 text-sm mt-5 max-md:mt-[45%]">Available balance</p>
-          <h1 className="text-5xl my-2 text-gray-50 max-md:text-3xl">
+    <div className="flex flex-col max-md:w-[85%] max-[820px]:w-[80%] max-[820px]:h-[100dvh] w-[50%] h-[740px] max-md:h-[100dvh] pb-10 max-md:pb-0 max-[820px]:ml-[12.5%] max-sm:ml-0 overflow-hidden backdrop-blur-sm max-sm:w-full max-sm:overflow-wrap">
+      <div className="flex w-full max-sm:w-[95%] max-sm:mx-auto h-[30%] max-[820px]:h-[250px] max-md:py-5 max-sm:h-[250px] max-sm:sticky max-sm:top-0 max-sm:bg-[rgba(204,204,204,0.03)] max-sm:border max-sm:border-[#cccccc11] max-sm:p-4 max-sm:pt-6 bg-[#cccccc11] rounded-4xl mt-[2%] overflow-hidden max-sm:rounded-3xl">
+        <div className="flex flex-col justify-between w-[30%] h-full p-5 max-md:px-5 max-md:my-0 max-sm:hidden max-md:p-0">
+          <h3 className="text-gray-50 text-md max-sm:text-sm max-[1000px]:text-sm max-[1000px]:font-bold">Portfolio Summary</h3>
+          <span>
+            <p className="text-green-200 text-sm mt-0 ">Available balance</p>
+            <h1 className="text-5xl my-2 text-gray-50 max-md:text-3xl max-[1000px]:text-2xl">
             $0<dot className="text-gray-500">.00</dot>
-          </h1>
-          <p className="mt-1 text-[red] text-sm">
+            </h1>
+            <p className="mt-1 text-[red] text-sm">
             <i className="fa fa-angle-down"></i>2.5% (1d) -$130
           </p>
+          </span>
+        
         </div>
 
-        <div className="w-[70%] max-sm:w-full h-full p-5 max-sm:p-0 overflow-hidden" id="chart">
-          <div className="w-full h-[50%] max-sm:flex max-sm:justify-between max-sm:items-start">
+        <div className="w-[70%] max-sm:w-full h-full p-5 max-[820px]:pb-0 max-sm:p-0 overflow-hidden flex justify-between flex-col" id="chart">
+          <div className="w-full h-fit max-sm:flex max-sm:justify-between max-sm:items-start">
             <span className="max-sm:flex items-center hidden">
               <h1 className="text-4xl max-sm:my-0 text-gray-50 hidden max-sm:block font-bold">
                 {showBalance ? (
@@ -130,7 +133,7 @@ function MainBox({ onAction }) {
   
             <button className="bg-[#cccccc31] max-sm:text-gray-300 max-sm:bg-[#cccccc11] text-gray-50 px-3 py-2 rounded-xl cursor-pointer float-end text-sm">Buy Crypto <i className="fa fa-credit-card"></i></button>
           </div>
-          <div className="w-full h-[50%] flex justify-end items-end max-sm:justify-between">
+          <div className="w-full h-fit flex justify-end items-end max-sm:justify-between overflow-scroll scrollbar-hide">
             <span className="flex flex-col">
               <span className='actionButton max-sm:text-gray-300' onClick={() => onAction('send')}>
               <i className="fas fa-arrow-left rotate-135"></i>
@@ -178,7 +181,7 @@ function MainBox({ onAction }) {
         </div>
       </div>
 
-      <div className="w-full h-[75%] max-md:h-[75%] bg-[#cccccc11] rounded-4xl mt-[2%] max-sm:mt-5 overflow-scroll scrollbar-hide max-sm:bg-transparent max-sm:overflow-wrap max-sm:h-full">
+      <div className="w-full h-[75%] max-[820px]:h-[85%] max-md:h-[75%] bg-[#cccccc11] rounded-4xl mt-[2%] max-sm:mt-5 overflow-scroll scrollbar-hide max-sm:bg-transparent max-sm:overflow-wrap max-sm:h-full">
         <span className="flex items-center justify-between mr-[5%]">
           <h3 className="font-large font-bold ml-[5%] my-5 text-gray-50">
             Top Assets

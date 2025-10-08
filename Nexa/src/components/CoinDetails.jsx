@@ -3,7 +3,7 @@ import TradingViewWidget from "./TradingViewWidget"
 
 function CoinDetails({ coin, onClose }) {
     return(
-        <div className="flex fixed inset-0 bg-[#0f0f0f] max-sm:bg-[#111] bg-opacity-50 flex-wrap items-start justify-center pt-5 max-sm:pt-4 rounded-3xl max-sm:rounded-3xl shadow-lg max-sm:mt-5 shadow-white max-sm:h-[100dvh]">
+        <div className="flex fixed inset-0 bg-[#0f0f0f] max-sm:bg-[#111] bg-opacity-50 flex-wrap items-start justify-center pt-5 max-sm:pt-4 rounded-3xl max-[820px]:rounded-none max-sm:rounded-3xl shadow-lg max-sm:mt-5 max-sm:shadow-white max-sm:h-[100dvh]">
             <div className="flex items-center justify-between w-full px-5 max-sm:px-2">
                 <span className="flex items-center cursor-pointer border p-1 rounded-2xl border-[#cccccc11] transition duration-200 hover:border-[#cccccc33]">
                     <img src={coin.image} alt={coin.name} className="w-[40px] h-[40px] max-sm:w-[35px] max-sm:h-[35px] rounded-full mr-2"/>
@@ -34,7 +34,7 @@ function CoinDetails({ coin, onClose }) {
             <div className="flex items-start w-[90%] max-sm:w-full h-[50%] max-sm:h-[250px] mt-1 p-5 max-sm:p-0">
                 <TradingViewWidget></TradingViewWidget>
             </div>
-            <div className="flex flex-wrap w-full mx-10 max-sm:my-0 h-[20%] max-sm:h-[55%]">
+            <div className="flex flex-wrap w-full mx-10 max-sm:my-0 h-[20%] max-sm:h-[55%] max-sm:mx-5 max-sm:pt-4">
                 <ul className="text-gray-200 w-full"><h3 className="text-lg font-bold">Token Info</h3>
                     <li className="mt-5 max-sm:mt-2 max-sm:text-sm">Token Name: <b className="float-end">{coin.name} ({coin.abb})</b></li>
                     <li className="flex-wrap mt-1 max-sm:mt-2 max-sm:text-sm flex justify-between">Contract Address: <b className="float-end">0x7c5d7B4b90892ce698ae17cDCED3a60aa505aF8F <i className="fa fa-copy text-gray-400"></i></b></li>

@@ -2,7 +2,7 @@
 const SideBar = ()=>{
     return(
         <>
-        <div className="w-[15%] h-full ml-[10px] max-sm:hidden max-md:hidden">
+        <div className="w-[15%] h-full ml-[10px] max-[820px]:ml-1 max-[820px]:hidden">
             <ul className="text-gray-200 mt-2"><p className="font-bold ml-4">Menu</p>
                 <li className="sideBut"><i className="fa fa-home"></i> Home</li>
                 <li className="sideBut"><i className="fa fa-wallet"></i> Wallet</li>
@@ -18,7 +18,7 @@ const SideBar = ()=>{
             </ul>
         </div>
 
-        <div className="hidden max-md:flex flex-col max-sm:hidden fixed w-[70px] bg-[#cccccc11] h-full top-0 py-1">
+        <div className="hidden max-[820px]:flex flex-col max-sm:hidden fixed w-[70px] bg-[#cccccc11] h-full top-0 py-1">
             <span>
                 <img src="/images/logo.png" alt="Logo" />
             </span>

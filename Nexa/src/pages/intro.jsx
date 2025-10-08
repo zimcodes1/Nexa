@@ -239,7 +239,7 @@ function Intro() {
                     
                 </div>
              </div>
-             <span className='px-30 max-sm:px-auto  flex justify-between max-sm:justify-center max-md:justify-center items-center w-full mt-5 max-sm:mt-2'>
+             <span className='px-30 max-sm:px-auto  flex justify-between max-sm:justify-center max-md:justify-center items-center w-full mt-5 max-sm:mt-2 max-sm:px-0'>
                <p className='text-gray-200 max-sm:text-sm'>© 2025 Nexa. All rights reserved.</p>
                         <div className='flex space-x-4 max-sm:hidden max-md:hidden'>
                             <a href="#" className='text-gray-200'>Privacy Policy</a>

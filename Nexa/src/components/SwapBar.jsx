@@ -11,7 +11,7 @@ const SwapBar = ({ onClose })=>{
         }
     });
     return(
-        <div ref={componentRef} className="max-sm:px-5 max-sm:rounded-t-3xl max-sm:ml-0 mx-auto max-md:bg-[#111] max-md:fixed max-md:w-[90%] max-md:ml-[10%] max-md:rounded-none max-md:px-10 max-md:pt-10 max-md:h-full z-10 max-sm:w-full max-sm:h-[80%] max-sm:fixed max-sm:bottom-0 max-sm:rounded-b-none  max-sm:bg-[#141414] max-sm:shadow-md max-sm:sadow-no shadow-white flex w-[30%] h-[700px] bg-gradient-to-b from-transparent to-[#cccccc11] rounded-4xl mr-5 p-5 flex-wrap backdrop-blur-sm">
+        <div ref={componentRef} className="max-sm:overflow-scroll scrollbar-hide max-sm:px-5 max-sm:rounded-t-3xl max-sm:ml-0 mx-auto max-[820px]:bg-[#111] max-[820px]:fixed max-[820px]:w-[90%] max-[820px]:ml-[10%] max-[820px]:rounded-none max-[820px]:px-10 max-[820px]:pt-10 max-[820px]:h-full z-10 max-sm:w-full max-sm:h-[80%] max-sm:fixed max-sm:bottom-0 max-sm:rounded-b-none  max-sm:bg-[#141414] max-sm:shadow-md max-sm:sadow-no shadow-white flex w-[30%] h-[700px] bg-gradient-to-b from-transparent to-[#cccccc11] rounded-4xl mr-5 p-5 flex-wrap backdrop-blur-sm">
             
             <h3 className="text-gray-50 text-lg font-bold">Swap</h3>
             <div className="w-full h-[40%] rounded-3xl bg-[#cccccc0a] max-sm:bg-transparent">
