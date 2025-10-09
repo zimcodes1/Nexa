@@ -36,7 +36,6 @@ function Recieve({ onClose }){
                 </div>
 
                  <i className="block text-gray-50 text-sm mt-3 text-center">Make sure you copy your wallet address correctly because crypto transactions are irreversible and you'll be responsible for your loses if any!</i>
-            <button className="w-full h-[60px] bg-green-400 hover:bg-red-500 transition-all duration-200 rounded-2xl text-left px-6 font-semibold text-gray-950 cursor-pointer mt-5">Confirm Transfer <i className="fa fa-arrow-right float-end"></i></button>
             </div >
         </div>
     )
