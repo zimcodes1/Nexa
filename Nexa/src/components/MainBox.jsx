@@ -200,7 +200,10 @@ function MainBox({ onAction }) {
             <p className="text-gray-400 ml-[5%]">Loading coins...</p>
           )}
           {error && (
-            <p className="text-red-400 ml-[5%]">Error: {error}</p>
+            <>
+              <img src="/images/neterror.png" alt="Error" className="w-[60%] mx-auto"/>
+              <p className="text-red-400 text-center">{error}, check your connection.</p>
+            </>
           )}
           {!loading &&
             !error &&
