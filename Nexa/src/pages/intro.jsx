@@ -2,6 +2,8 @@ import '../App.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
+import { Slide } from "react-awesome-reveal";
+
 function Intro() {
     const [device, setDevice] = useState('Mobile');
     return (
@@ -26,7 +28,8 @@ function Intro() {
             </div>
 
             {/* Hero Section */}
-            <div className='w-[85%] max-md:w-[90%] max-sm:w-[95%] max-md:py-10 max-sm:flex-col-reverse max-md:flex-col-reverse h-[500px] max-md:h-auto bg-[#cccccc07] backdrop-blur-3xl rounded-4xl mx-auto mt-8 border border-[#cccccc11] flex justify-center items-center'>
+            <Slide direction='up' triggerOnce duration={800}>
+                  <div className='w-[85%] max-md:w-[90%] max-sm:w-[95%] max-md:py-10 max-sm:flex-col-reverse max-md:flex-col-reverse h-[500px] max-md:h-auto bg-[#cccccc07] backdrop-blur-3xl rounded-4xl mx-auto mt-8 border border-[#cccccc11] flex justify-center items-center'>
                 <div className='w-[50%] max-md:w-full h-full flex flex-col justify-center items-start px-10 max-sm:p-5'>
                     <h1 className='text-gray-100 text-4xl max-md:text-3xl max-sm:text-2xl font-[Mont] font-bold text-left'>Experience the next generation of Web innovation.</h1>
                     <p className='text-gray-300 mt-3 max-sm:text-lg'>Take complete control of your digital assets and explore the world of Web3 with <b>Nexa</b>.</p>
@@ -43,6 +46,7 @@ function Intro() {
                     </span>
                 </div>
             </div>
+            </Slide>
 
             {/* Stats Section */}
             <div className='w-[85%] max-md:w-[90%] max-sm:w-[95%] h-[100px] mx-auto mt-8 flex max-md:flex-wrap max-md:h-auto justify-center items-center'>
