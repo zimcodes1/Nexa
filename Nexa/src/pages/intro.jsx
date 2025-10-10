@@ -2,12 +2,12 @@ import '../App.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
-import { Slide } from "react-awesome-reveal";
+import { Slide, Fade } from "react-awesome-reveal";
 
 function Intro() {
     const [device, setDevice] = useState('Mobile');
     return (
-        <div className="flex w-full min-h-screen custom-container justify-between flex-wrap pb-5">
+        <div className="flex w-full min-h-screen custom-container overflow-hidden justify-between flex-wrap pb-5">
             {/* Top Navigation Bar */}
             <div className='sticky top-5 z-50 flex px-4 items-center justify-between w-[70%] max-md:w-[90%] max-sm:w-[95%] h-[70px] bg-[#cccccc07] backdrop-blur-3xl rounded-4xl mx-auto mt-5 border border-[#cccccc11]'>
                 <span className='logo flex justify-center items-center w-auto'>
@@ -28,7 +28,7 @@ function Intro() {
             </div>
 
             {/* Hero Section */}
-            <Slide direction='up' triggerOnce duration={800}>
+            <Fade triggerOnce duration={1000} className='w-full'>
                   <div className='w-[85%] max-md:w-[90%] max-sm:w-[95%] max-md:py-10 max-sm:flex-col-reverse max-md:flex-col-reverse h-[500px] max-md:h-auto bg-[#cccccc07] backdrop-blur-3xl rounded-4xl mx-auto mt-8 border border-[#cccccc11] flex justify-center items-center'>
                 <div className='w-[50%] max-md:w-full h-full flex flex-col justify-center items-start px-10 max-sm:p-5'>
                     <h1 className='text-gray-100 text-4xl max-md:text-3xl max-sm:text-2xl font-[Mont] font-bold text-left'>Experience the next generation of Web innovation.</h1>
@@ -46,7 +46,7 @@ function Intro() {
                     </span>
                 </div>
             </div>
-            </Slide>
+            </Fade>
 
             {/* Stats Section */}
             <div className='w-[85%] max-md:w-[90%] max-sm:w-[95%] h-[100px] mx-auto mt-8 flex max-md:flex-wrap max-md:h-auto justify-center items-center'>
@@ -58,7 +58,8 @@ function Intro() {
             </div>
 
             {/* Features Section */}
-            <div className='w-[85%] max-md:w-[90%] max-sm:w-[95%] h-[400px] max-sm:h-auto max-sm:py-5 max-md:h-auto bg-[#cccccc07] backdrop-blur-3xl rounded-4xl mx-auto mt-10 border border-[#cccccc11] flex max-md:flex-col justify-center items-center'>
+            <Slide direction='left' triggerOnce duration={1000} fraction={0.4} className='w-full'>
+           <div className='w-[85%] max-md:w-[90%] max-sm:w-[95%] h-[400px] max-sm:h-auto max-sm:py-5 max-md:h-auto bg-[#cccccc07] backdrop-blur-3xl rounded-4xl mx-auto mt-10 border border-[#cccccc11] flex max-md:flex-col justify-center items-center'>
                 <div className='w-[30%] max-md:w-[70%] max-sm:w-[90%] transition-all duration-300 hover:scale-105 h-full flex flex-col justify-center items-center px-10'>
                     <img src="/images/globe.png" alt="Globe" className='w-full h-auto'/>
                 </div>
@@ -69,7 +70,9 @@ function Intro() {
                     <button className='px-4 py-3 ml-4 mt-3 rounded-2xl border-2 border-green-500 text-green-500 cursor-pointer transition-all duration-300 hover:bg-green-500 hover:text-white'>Join our community <i className="fa fa-plus"></i></button>
                 </div>
             </div>
-
+            </Slide>
+ 
+            <Slide duration={1000} triggerOnce className='w-full' direction='right' fraction={0.4}>
             <div className='w-[85%] h-[400px] max-md:w-[90%] max-sm:w-[95%] max-sm:h-auto max-sm:py-5 max-sm:flex-col-reverse bg-[#cccccc07] backdrop-blur-3xl rounded-4xl mx-auto mt-10 border border-[#cccccc11] flex justify-center items-center'>
                 <div className='w-[60%] max-sm:w-full h-full max-md:h-auto flex flex-col justify-center items-start px-5'>
                   <h1 className='text-gray-100 text-2xl font-[Mont] font-bold text-left max-sm:text-lg max-sm: mt-2'>Single platform, inumerable assets!</h1>
@@ -87,8 +90,10 @@ function Intro() {
                     <img src="/images/coinwallet.png" alt="Crypto circle" className='w-full h-auto'/>
                 </div>
             </div>
+            </Slide>
 
-            <div className='w-[85%] h-[400px] mx-auto mt-10 max-sm:w-[95%] max-sm:h-auto max-sm:mt-5 flex justify-center items-center flex-col'>
+            <Slide duration={800} triggerOnce className='w-full' direction='up' fraction={0.3}>
+                <div className='w-[85%] h-[400px] mx-auto mt-10 max-sm:w-[95%] max-sm:h-auto max-sm:mt-5 flex justify-center items-center flex-col'>
                 <h2 className='text-gray-100 text-2xl font-[Mont] font-bold max-sm:text-lg max-sm:text-center'>Seamless Deposits & Withdrawals</h2>
                 <div className='w-full h-[90%] max-sm:py-5 max-sm:flex-col bg-[#111111e7] border border-[#cccccc11] backdrop-blur-3xl  rounded-4xl flex justify-center items-center px-10 mt-2'>
                     <div className='w-[40%] max-sm:w-full transition-all duration-300 hover:scale-105 h-full flex flex-col justify-center items-center px-10'>
@@ -100,8 +105,12 @@ function Intro() {
                         <button className='px-4 py-3 ml-4 mt-3 rounded-2xl border-2 border-green-500 text-green-500 cursor-pointer transition-all duration-300 hover:bg-green-500 hover:text-white'>Get Started<i className="fa fa-arrow-right"></i></button>
                     </div>
                 </div>
-            </div>
+                </div>
+            </Slide>
 
+            {/* Security Section */}
+
+            <Fade duration={1000} delay={300} fraction={0.4} direction='up' triggerOnce className='w-full'>
             <div className='w-[85%] h-[430px] max-md:h-auto max-sm:h-auto max-sm:w-[95%] mx-auto mt-10 flex justify-center items-center flex-col'>
                 <h2 className='text-gray-100 text-2xl font-[Mont] font-bold max-sm:text-lg'>Privacy & Security</h2>
                 <div className='w-full h-[80%] max-md:h-auto flex max-sm:flex-col justify-evenly items-center mt-3 max-md:flex-wrap max-md:justify-center'>
@@ -123,6 +132,7 @@ function Intro() {
                 </div>
              <button className='px-4 py-2 mt-4 rounded-2xl border-2 border-green-500 text-green-500 cursor-pointer transition-all duration-300 hover:bg-green-500 hover:text-white'>Learn More<i className="fa fa-arrow-right"></i></button>
             </div>
+            </Fade>
 
             {/* Device Selection Section */}
             <div className='w-[85%] max-md:w-[90%] max-sm:w-[95%] h-[480px] max-md:h-auto mx-auto mt-10 max-sm:mt-10 flex max-md:flex-col-reverse px-5 max-md:px-0 max-sm:px-0 items-center justify-evenly'>
