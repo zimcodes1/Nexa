@@ -110,7 +110,7 @@ function Intro() {
 
             {/* Security Section */}
 
-            <Fade duration={1000} delay={300} fraction={0.4} direction='up' triggerOnce className='w-full'>
+            <Fade duration={1000} fraction={0.4} delay={300} triggerOnce className='w-full'>
             <div className='w-[85%] h-[430px] max-md:h-auto max-sm:h-auto max-sm:w-[95%] mx-auto mt-10 flex justify-center items-center flex-col'>
                 <h2 className='text-gray-100 text-2xl font-[Mont] font-bold max-sm:text-lg'>Privacy & Security</h2>
                 <div className='w-full h-[80%] max-md:h-auto flex max-sm:flex-col justify-evenly items-center mt-3 max-md:flex-wrap max-md:justify-center'>
@@ -136,11 +136,12 @@ function Intro() {
 
             {/* Device Selection Section */}
             <div className='w-[85%] max-md:w-[90%] max-sm:w-[95%] h-[480px] max-md:h-auto mx-auto mt-10 max-sm:mt-10 flex max-md:flex-col-reverse px-5 max-md:px-0 max-sm:px-0 items-center justify-evenly'>
-                <div className='w-[45%] max-md:w-full bg-[#cccccc07] border border-[#cccccc11] rounded-2xl max-sm:rounded-t-none max-md:rounded-t-none h-full flex flex-col p-8 max-sm:p-4 justify-center'>
+                <Fade duration={800} direction='left' className='w-[45%] h-full max-md:w-full'>
+                <div className='w-full bg-[#cccccc07] border border-[#cccccc11] rounded-2xl max-sm:rounded-t-none max-md:rounded-t-none h-full flex flex-col p-8 max-sm:p-4 justify-center'>
                     <h2 className='font-[Mont] text-gray-100 text-2xl max-sm:text-lg'>Your one-stop crypto wallet.</h2>
                     <p className='text-gray-200 mt-2'>Buy, sell, and swap crypto, earn rewards, manage NFTs, and discover DApps, all in one place.</p>
 
-                    <span className='flex w-full rounded-3xl p-1 border-2 border-[#cccccc11] mt-5 justify-evenly'>
+                    <span className='flex w-full rounded-3xl py-1 border-2 border-[#cccccc11] mt-5 justify-evenly'>
                         <button 
         onClick={() => setDevice('Mobile')} 
         className={`py-2 w-[32%] rounded-3xl cursor-pointer transition-all duration-300 font-bold max-sm:text-sm
@@ -171,9 +172,13 @@ function Intro() {
                     </span>
                         <button className='w-[50%] max-sm:w-[80%] max-md:mx-auto max-sm:mx-auto py-2 mt-5 rounded-3xl border-2 border-green-500 text-green-500 cursor-pointer transition-all duration-300 hover:bg-green-500 hover:text-gray-950'>Download {device} App <i className="fa fa-download"></i></button>
                 </div>
-                <div className='w-[45%] max-md:w-full max-sm:w-full max-sm:rounded-b-none max-md:rounded-b-none  bg-gray-100 border border-[#cccccc11] rounded-2xl h-full flex items-center justify-center p-8 max-sm:p-4'>
+                </Fade>
+
+                <Fade duration={800} direction='right' className='w-[45%] max-md:w-full h-full'>
+                <div className='max-sm:rounded-b-none max-md:rounded-b-none  bg-gray-100 border border-[#cccccc11] rounded-2xl h-full flex items-center justify-center p-8 max-sm:p-4'>
                     <img src={device === 'Mobile' ? "/images/mobile.png" : device === 'Desktop' ? "/images/pcview.png" : "/images/extension.png"} alt={`${device} view`} />
                 </div>
+                </Fade>
             </div>
 
              {/* Footer Section */}
