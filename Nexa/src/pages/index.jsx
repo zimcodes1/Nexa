@@ -10,7 +10,7 @@ import { useState } from 'react'
 
 console.log("Index Page Loaded");
 function Index() {
-    const [activeComponent, setActiveComponent] = useState('recieve');
+    const [activeComponent, setActiveComponent] = useState('nft');
 
     const componentMap = {
         send: <Send onClose={() => setActiveComponent(null)} />,

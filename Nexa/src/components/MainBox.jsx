@@ -99,8 +99,8 @@ function MainBox({ onAction }) {
   }, []);
 
   return (
-    <div className="flex flex-col max-md:w-[85%] max-[820px]:w-[80%] max-[820px]:h-[100dvh] w-[50%] h-[740px] max-md:h-[100dvh] pb-10 max-md:pb-0 max-[820px]:ml-[12.5%] max-sm:ml-0 overflow-hidden backdrop-blur-sm max-sm:w-full max-sm:overflow-wrap">
-      <div className="flex w-full max-sm:w-[95%] max-sm:mx-auto h-[30%] max-[820px]:h-[250px] max-md:py-5 max-sm:h-[250px] max-sm:sticky max-sm:top-0 max-sm:bg-[rgba(204,204,204,0.03)] max-sm:border max-sm:border-[#cccccc11] max-sm:p-4 max-sm:pt-6 bg-[#cccccc11] rounded-4xl mt-[2%] overflow-hidden max-sm:rounded-3xl">
+    <div className="flex flex-col max-md:w-[85%] max-[820px]:w-[80%] max-[820px]:h-[100dvh] w-[50%] h-[740px] max-md:h-[100dvh] pb-10 max-sm:pb-0 max-md:pb-0 max-[820px]:ml-[12.5%] max-sm:ml-0 overflow-hidden backdrop-blur-sm max-sm:w-full max-sm:overflow-wrap">
+      <div className="flex w-full max-sm:w-[95%] max-sm:mx-auto h-[30%] max-[820px]:h-[250px] max-md:py-5 max-sm:h-[250px] max-sm:sticky max-sm:top-15 max-sm:bg-[rgba(204,204,204,0.03)] max-sm:border max-sm:border-[#cccccc11] max-sm:p-4 max-sm:pt-6 bg-[#cccccc11] rounded-4xl mt-[2%] overflow-hidden max-sm:rounded-3xl">
         <div className="flex flex-col justify-between w-[30%] h-full p-5 max-md:px-5 max-md:my-0 max-sm:hidden max-md:p-0">
           <h3 className="text-gray-50 text-md max-sm:text-sm max-[1000px]:text-sm max-[1000px]:font-bold">Portfolio Summary</h3>
           <span>
@@ -181,7 +181,7 @@ function MainBox({ onAction }) {
         </div>
       </div>
 
-      <div className="w-full h-[75%] max-[820px]:h-[85%] max-md:h-[75%] bg-[#cccccc11] rounded-4xl mt-[2%] max-sm:mt-5 overflow-scroll scrollbar-hide max-sm:bg-transparent max-sm:overflow-wrap max-sm:h-full">
+      <div className="w-full h-[75%] max-[820px]:h-[85%] max-md:h-[75%] bg-[#cccccc11] rounded-4xl mt-[2%] max-sm:mt-12 overflow-scroll scrollbar-hide max-sm:bg-transparent max-sm:overflow-wrap max-sm:h-full max-sm:rounded-none">
         <span className="flex items-center justify-between mr-[5%]">
           <h3 className="font-large font-bold ml-[5%] my-5 text-gray-50">
             Top Assets
