@@ -25,9 +25,9 @@ function Lost(){
                 </div>
 
             <div className="flex w-full h-full flex-col justify-center items-center">
-                <img src="/images/lost.png" alt="404 not found" className="w-[40%]"/>
-                <h1 className="text-gray-50 font-bold text-5xl">You've lost your way?</h1>
-                <p className="text-gray-400 text-2xl">Let's get you back.</p>
+                <img src="/images/lost.png" alt="404 not found" className="w-[40%] max-sm:w-[60%]"/>
+                <h1 className="text-gray-50 font-bold text-5xl max-sm:text-3xl">You've lost your way?</h1>
+                <p className="text-gray-400 text-2xl max-sm:text-xl">Let's get you back.</p>
                 <button onClick={()=>{history.back()}} className="h-[50px] bg-green-400 hover:bg-red-500 transition-all duration-200 rounded-2xl text-center px-6 font-semibold text-gray-950 cursor-pointer mt-5"><i className="fa fa-angle-left"></i> Back</button>
                 
             </div>
